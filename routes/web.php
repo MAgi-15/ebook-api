@@ -20,3 +20,28 @@ Route::get('/', function () {
 Route::get('coba', function(){
     return "Halloo :Kakk";
 });
+
+//Array json
+Route::get('coba1', function(){
+    return ['rapli', 'jeje', 'juju'];
+});
+
+//json objek
+Route::get('coba2', function(){
+    return[
+        'Nama' => "Muhammad Agi",
+        'Kelas' => "XII RPL 4",
+        'Nis' => 3103120140
+    ];
+});
+
+//objek json, ubah status kode
+Route::get('coba3', function(){
+    return response()->json(
+        [
+            'Nama' => "Muhammad Agi",
+            'Kelas' => "XII RPL 4",
+            'Nis' => 3103120140
+        ], 201
+    );
+});
